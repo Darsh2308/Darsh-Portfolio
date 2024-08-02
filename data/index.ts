@@ -1,3 +1,6 @@
+import Image from "next/image"; // Ensure you have this import
+
+// Updated navItems
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -5,6 +8,7 @@ export const navItems = [
   { name: "Contact", link: "#contact" },
 ];
 
+// Updated gridItems
 export const gridItems = [
   {
     id: 1,
@@ -46,7 +50,6 @@ export const gridItems = [
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-
   {
     id: 5,
     title:
@@ -70,6 +73,7 @@ export const gridItems = [
   },
 ];
 
+// Updated projects
 export const projects = [
   {
     id: 1,
@@ -93,7 +97,7 @@ export const projects = [
     des: "I created a modern portfolio website to showcase my skills and work. It also includes a convenient contact feature for easy communication.",
     img: "/p3.png",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "https://darshs-portfolio.com", // Updated URL placeholder
+    link: "https://darshs-portfolio.com",
   },
   {
     id: 4,
@@ -105,6 +109,7 @@ export const projects = [
   },
 ];
 
+// Updated testimonials
 export const testimonials = [
   {
     quote:
@@ -138,6 +143,7 @@ export const testimonials = [
   },
 ];
 
+// Updated companies
 export const companies = [
   {
     id: 1,
@@ -171,6 +177,7 @@ export const companies = [
   },
 ];
 
+// Updated workExperience
 export const workExperience = [
   {
     id: 1,
@@ -202,6 +209,7 @@ export const workExperience = [
   },
 ];
 
+// Updated socialMedia
 export const socialMedia = [
   {
     id: 1,

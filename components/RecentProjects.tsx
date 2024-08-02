@@ -1,7 +1,7 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
-
+import Image from "next/image"; // Import Image from next/image
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
 
@@ -18,21 +18,27 @@ const RecentProjects = () => {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
-            <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
-            >
+            <PinContainer title="/ui.aceternity.com" href="">
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimg" />
+                  <Image
+                    src="/bg.png"
+                    alt="Background Image"
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute inset-0"
+                  />
                 </div>
-                <img
+                <Image
                   src={item.img}
-                  alt="cover"
+                  alt="Project Cover"
                   className="z-10 absolute bottom-0"
+                  layout="intrinsic"
+                  width={500} // Add appropriate width
+                  height={300} // Add appropriate height
                 />
               </div>
 
@@ -60,7 +66,13 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Image
+                        src={icon}
+                        alt={`Icon ${index}`}
+                        className="p-2"
+                        width={100} // Adjust the icon size here
+                        height={100} // Adjust the icon size here
+                      />
                     </div>
                   ))}
                 </div>
