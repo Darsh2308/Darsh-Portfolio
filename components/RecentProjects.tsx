@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { FaLocationArrow } from "react-icons/fa6";
 import Image from "next/image"; // Import Image from next/image
@@ -18,8 +19,13 @@ const RecentProjects = () => {
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
-            <PinContainer title="/ui.aceternity.com" href="">
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
+            <PinContainer title="Darsh's Work" href={item.link}>
+              <Link
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10"
+              >
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
@@ -37,10 +43,10 @@ const RecentProjects = () => {
                   alt="Project Cover"
                   className="z-10 absolute bottom-0"
                   layout="intrinsic"
-                  width={500} // Add appropriate width
-                  height={300} // Add appropriate height
+                  width={500}
+                  height={300}
                 />
-              </div>
+              </Link>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
                 {item.title}
@@ -70,8 +76,8 @@ const RecentProjects = () => {
                         src={icon}
                         alt={`Icon ${index}`}
                         className="p-2"
-                        width={100} // Adjust the icon size here
-                        height={100} // Adjust the icon size here
+                        width={100}
+                        height={100}
                       />
                     </div>
                   ))}
