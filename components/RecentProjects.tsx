@@ -1,12 +1,16 @@
 "use client";
-import Link from "next/link";
-
+import { useState } from "react";
 import { FaLocationArrow } from "react-icons/fa6";
-import Image from "next/image"; // Import Image from next/image
+import Image from "next/image";
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+import ProjectModal from "./ProjectModal";
+
+type Project = (typeof projects)[number];
 
 const RecentProjects = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
   return (
     <div className="py-20">
       <h1 className="heading">
@@ -20,11 +24,9 @@ const RecentProjects = () => {
             key={item.id}
           >
             <PinContainer title="Darsh's Work" href={item.link}>
-              <Link
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10"
+              <button
+                onClick={() => setSelectedProject(item)}
+                className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10 text-left"
               >
                 <div
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
@@ -33,8 +35,8 @@ const RecentProjects = () => {
                   <Image
                     src="/bg.png"
                     alt="Background Image"
-                    layout="fill"
-                    objectFit="cover"
+                    fill
+                    style={{ objectFit: "cover" }}
                     className="absolute inset-0"
                   />
                 </div>
@@ -42,11 +44,10 @@ const RecentProjects = () => {
                   src={item.img}
                   alt="Project Cover"
                   className="z-10 absolute bottom-0"
-                  layout="intrinsic"
                   width={500}
                   height={300}
                 />
-              </Link>
+              </button>
 
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
                 {item.title}
@@ -83,17 +84,25 @@ const RecentProjects = () => {
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center">
+                <button
+                  onClick={() => setSelectedProject(item)}
+                  className="flex justify-center items-center"
+                >
                   <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
+                    View Details
                   </p>
                   <FaLocationArrow className="ms-3" color="#CBACF9" />
-                </div>
+                </button>
               </div>
             </PinContainer>
           </div>
         ))}
       </div>
+
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </div>
   );
 };
