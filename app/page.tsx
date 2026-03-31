@@ -1,17 +1,18 @@
-"use client";
-
 import { navItems } from "@/data";
+import dynamic from "next/dynamic";
 
 import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import About from "@/components/AboutMe";
-import TechnicalSkills from "@/components/TechnicalSkills";
+
+const Grid = dynamic(() => import("@/components/Grid"), { ssr: false });
+const TechnicalSkills = dynamic(() => import("@/components/TechnicalSkills"));
+const RecentProjects = dynamic(() => import("@/components/RecentProjects"));
+const Clients = dynamic(() => import("@/components/Clients"));
+const Experience = dynamic(() => import("@/components/Experience"));
+const Certifications = dynamic(() => import("@/components/Certifications"));
+const Approach = dynamic(() => import("@/components/Approach"));
+const Footer = dynamic(() => import("@/components/Footer"));
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
         <RecentProjects />
         <Clients />
         <Experience />
+        <Certifications />
         <Approach />
         <Footer />
       </div>

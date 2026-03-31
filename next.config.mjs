@@ -2,7 +2,13 @@ import { withSentryConfig } from '@sentry/nextjs';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Add any other Next.js configurations you need here
+  compress: true,
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+  experimental: {
+    optimizePackageImports: ["react-icons", "@tabler/icons-react"],
+  },
 };
 
 // Sentry configuration options

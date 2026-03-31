@@ -31,31 +31,41 @@ const About = () => {
           </p>
 
           <TextGenerateEffect
-            words="Passionate Developer & Innovator"
+            words="AI Engineer & Full Stack Developer"
             className="text-[32px] md:text-5xl lg:text-6xl font-bold mt-4"
           />
 
           <p className="text-center md:tracking-wider mt-6 text-sm md:text-lg lg:text-xl leading-relaxed text-gray-300">
-            I&apos;m a Final year Electronics and Telecommunication Engineering
-            student with a passion for creating innovative digital solutions.
-            Currently serving as{" "}
+            I&apos;m a final-year Electronics and Telecommunication Engineering
+            student with hands-on experience building{" "}
             <span className="font-semibold text-white">
-              Lead Full Stack Developer at Hubnex Labs
+              production-grade agentic systems
             </span>
-            , I specialize in end-to-end development and team leadership.
+            , voice AI pipelines, and LLM-powered applications. Currently
+            working as an{" "}
+            <span className="font-semibold text-white">
+              AI-Powered Full Stack Developer at Groove Innovations
+            </span>
+            , Bengaluru — where I build intelligent CRM systems, smart payment
+            gateways, and cloud-scale infrastructure.
           </p>
 
           <p className="text-center md:tracking-wider mt-6 text-sm md:text-lg lg:text-xl leading-relaxed text-gray-300">
-            My journey spans from frontend frameworks like{" "}
-            <span className="font-semibold text-white">React.js</span> and{" "}
-            <span className="font-semibold text-white">Next.js</span> to backend
-            technologies like{" "}
-            <span className="font-semibold text-white">Node.js</span> and{" "}
-            <span className="font-semibold text-white">FastAPI</span>. <br />
-            I&apos;m particularly passionate about{" "}
-            <span className="font-semibold text-white">IoT solutions</span>
-            and how technology can solve real-world problems, as demonstrated in
-            my agricultural irrigation and women&apos;s safety projects.
+            My stack spans{" "}
+            <span className="font-semibold text-white">
+              LangChain, LangGraph, RAG & Agentic AI
+            </span>{" "}
+            on the AI side, with{" "}
+            <span className="font-semibold text-white">
+              React.js, Next.js, FastAPI & Node.js
+            </span>{" "}
+            for full-stack development. I&apos;ve led teams of 15–20 developers,
+            architected real-time collaborative platforms, and shipped voice AI
+            agents optimised for{" "}
+            <span className="font-semibold text-white">
+              Indian language support
+            </span>{" "}
+            — always focused on driving real-world impact at scale.
           </p>
         </div>
       </div>
